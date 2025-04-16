@@ -70,12 +70,18 @@
       margin: 0 auto 60px;
     }
 
-    input[type="email"] {
+    input[type="email"], textarea {
       padding: 10px;
       border-radius: 20px;
       border: 1px solid #ccc;
       width: 70%;
       margin-bottom: 15px;
+    }
+
+    textarea {
+      width: 70%;
+      height: 80px;
+      resize: none;
     }
   </style>
 </head>
@@ -100,9 +106,17 @@
   <div id="undress" class="tab-content">Slowly, playfully, like a scene from a daydream 💜👗</div>
   <div id="cozy" class="tab-content">Let’s get under the covers and stream something soft 🍿📺</div>
 
-  <form action="https://formspree.io/f/xnnpydgla" method="POST" class="email-subscribe">
+  <form action="https://formspree.io/f/xnnpydgl" method="POST" class="email-subscribe">
     <h3>Subscribe for Cozy Updates 💌</h3>
-    <input type="email" name="email" placeholder="Your email for bedtime updates ✨" required>
+    <label>
+      Your email:<br>
+      <input type="email" name="email" required>
+    </label>
+    <br>
+    <label>
+      Your message:<br>
+      <textarea name="message"></textarea>
+    </label>
     <br>
     <button type="submit">Subscribe</button>
   </form>
