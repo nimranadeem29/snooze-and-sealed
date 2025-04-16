@@ -25,11 +25,14 @@
       margin: 20px auto 40px;
     }
 
-    .buttons {
+    .tab-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
       margin-bottom: 40px;
     }
 
-    button {
+    .tab {
       background-color: #ba68c8;
       color: white;
       border: none;
@@ -42,8 +45,20 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
-    button:hover {
+    .tab:hover {
       background-color: #ab47bc;
+    }
+
+    .tab-content {
+      display: none;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      font-size: 1.1em;
+      color: #4a148c;
+    }
+
+    .active {
+      display: block;
     }
 
     .email-subscribe {
@@ -80,6 +95,40 @@
   <h1>Signed, Sealed, Snoozed 😴💜</h1>
   <p>Welcome to the cutest contract of all time. Pick your vibe. Press a button. Let the cozy begin.</p>
 
-  <div class="buttons">
-    <button onclick="alert('Cuddle invite sent 💌')">Share Rest</button>
-    <button onclick="alert('Setting our sleep schedules to soulmate sync
+  <div class="tab-container">
+    <button class="tab" onclick="openTab('rest')">Share Rest</button>
+    <button class="tab" onclick="openTab('sleep')">Share Sleep</button>
+    <button class="tab" onclick="openTab('secrets')">Share Secrets</button>
+    <button class="tab" onclick="openTab('action')">Share Sexy Action</button>
+    <button class="tab" onclick="openTab('undress')">Undress</button>
+    <button class="tab" onclick="openTab('cozy')">Watch Something Cozy</button>
+  </div>
+
+  <div id="rest" class="tab-content active">Let's unplug and melt into soft blankets together 💆‍♀️💤</div>
+  <div id="sleep" class="tab-content">Syncing sleep schedules for cuddly dreams 😴💫</div>
+  <div id="secrets" class="tab-content">Spill the tea or whisper something sweet 😘🗝️</div>
+  <div id="action" class="tab-content">Time to turn the cozy up a notch 🔥💋</div>
+  <div id="undress" class="tab-content">Slowly, playfully, like a scene from a daydream 💜👗</div>
+  <div id="cozy" class="tab-content">Let’s get under the covers and stream something soft 🍿📺</div>
+
+  <form action="https://formspree.io/f/xnnpydgla" method="POST" class="email-subscribe">
+    <h3>Subscribe for Cozy Updates 💌</h3>
+    <input type="email" name="email" placeholder="Your email for bedtime updates ✨" required>
+    <br>
+    <button type="submit">Subscribe</button>
+  </form>
+
+  <div class="infographic">
+    <img src="https://i.imgur.com/9gUdyTb.jpeg" alt="Cozy bed visual vibes">
+  </div>
+
+  <script>
+    function openTab(tabName) {
+      var contents = document.querySelectorAll('.tab-content');
+      contents.forEach(c => c.classList.remove('active'));
+      document.getElementById(tabName).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
